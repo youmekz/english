@@ -3,10 +3,31 @@ section#content {
 }
 
 nav.left-nav {
+  display: flex;
+  flex-direction: column;
   position: fixed;
+  padding: 10px;
+  padding-top: calc(var(--header-height) + 20px);
   top: 0;
   left: 0;
   min-height: 100vh;
   width: var(--nav-width);
   background: lightgray;
+  color: black;
+}
+
+nav.left-nav a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: gray;
+  border: 1px solid gray;
+  padding: 5px;
+  padding-bottom: 3px;
+  border-radius: var(--radius);
+  margin-bottom: 2px;
+}
+
+nav.left-nav a:hover {
+  background: gray;
+  color: white;
 }

@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\DictionaryController;
-
+use App\Http\Middleware\CheckAdminKey;
 
 Route::get('/', function () {
     return view('components.index');
@@ -21,15 +21,14 @@ Route::get('/pages/dictionary', function () {
   return view('components.pages.dictionary');
 });
 
-Route::get('/admin', function (Request $request) {
-  $getParams = $request->all();
+Route::middleware([CheckAdminKey::class])->group(function () {
+  Route::get('/admin', function (Request $request) {
+      return view('components.admin.admin', ['getParams' => $request->all()]);
+  });
 
-  if (empty($getParams) || $getParams['key'] != '123') {
-    return redirect('/');
-  }
+  Route::get('/admin/verbs', [DictionaryController::class, 'addVerb'])->name('admin.addverb');
+  Route::post('/admin/verbs', [DictionaryController::class, 'storeVerb']);
 
-  return view('components.pages.admin', compact('getParams'));
+  Route::get('/admin/nouns', [DictionaryController::class, 'addNoun'])->name('admin.addnoun');
+  Route::post('/admin/nouns', [DictionaryController::class, 'storeNoun']);
 });
-
-Route::get('/admin', [DictionaryController::class, 'index'])->name('admin');
-Route::post('/admin', [DictionaryController::class, 'store']);
