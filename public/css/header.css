@@ -1,0 +1,18 @@
+header.header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: var(--header-height);
+  background: var(--color-theme);
+  z-index: var(--z-header);
+  box-shadow: 0 0 3px lightslategray;
+}
+
+header.header menu > a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: gray;
+}

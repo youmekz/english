@@ -1,0 +1,12 @@
+section#content {
+  margin-left: var(--nav-width);
+}
+
+nav.left-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: var(--nav-width);
+  background: lightgray;
+}
