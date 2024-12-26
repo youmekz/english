@@ -1,0 +1,24 @@
+.alert {
+  position: fixed;
+  top: -200px;
+  width: var(--alert-width);
+  left: calc(50vw - (var(--alert-width) / 2));
+  background: var(--color-theme);
+  padding: 5px 15px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  z-index: var(--z-alert);
+  animation: showAlert 6s linear;
+}
+
+@keyframes showAlert {
+  10% {
+    top: 20px;
+  }
+  70% {
+    top: 20px;
+  }
+  90% {
+    top: -200px;
+  }
+}

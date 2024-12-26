@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 
 class DictionaryController extends Controller
 {
+    public function showDictionary() {
+      $verbs = DictionaryVerb::all();
+      $nouns = DictionaryNoun::all();
+
+      return view('components.pages.dictionary', compact('verbs', 'nouns'));
+    }
+
     public function addVerb()
     {
         return view('components.admin.addverb');

@@ -30,7 +30,9 @@
 
   --header-height: 30px;
   --nav-width: 20vw;
+  --alert-width: 30vw;
 
+  --z-alert: 100;
   --z-header: 90;
   --z-nav: 80;
 }

@@ -12,7 +12,7 @@ class CheckAdminKey
     {
         $getParams = $request->all();
 
-        if (!empty($getParams) && isset($getParams['key']) && $getParams['key'] != '123') {
+        if (empty($getParams) || !isset($getParams['key']) || $getParams['key'] != config('app.admin_key')) {
             return redirect('/');
         }
 
