@@ -27,10 +27,10 @@ Route::middleware([CheckAdminKey::class])->group(function () {
   Route::get('/admin', function (Request $request) {
       return view('components.admin.admin', ['key' => $request->all()]);
   });
-
-  Route::get('/admin/verbs', [DictionaryController::class, 'addVerb'])->name('admin.addverb');
-  Route::post('/admin/verbs', [DictionaryController::class, 'storeVerb']);
-
-  Route::get('/admin/nouns', [DictionaryController::class, 'addNoun'])->name('admin.addnoun');
-  Route::post('/admin/nouns', [DictionaryController::class, 'storeNoun']);
 });
+
+Route::get('/admin/verbs', [DictionaryController::class, 'addVerb'])->name('admin.addverb');
+Route::post('/admin/verbs', [DictionaryController::class, 'storeVerb']);
+
+Route::get('/admin/nouns', [DictionaryController::class, 'addNoun'])->name('admin.addnoun');
+Route::post('/admin/nouns', [DictionaryController::class, 'storeNoun']);

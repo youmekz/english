@@ -1,3 +1,3 @@
 <x-layouts.default>
-  saf
+  Index
 </x-layouts.default>

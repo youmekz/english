@@ -26,7 +26,7 @@ class DictionaryController extends Controller
         $request->validate([
             'russian' => 'required|string|max:255',
             'simple' => 'required|string|max:255',
-            'complex' => 'string|max:255',
+            'complex' => 'nullable|string|max:255',
         ]);
 
         DictionaryVerb::create([
@@ -35,7 +35,8 @@ class DictionaryController extends Controller
             'complex' => $request->complex,
         ]);
 
-        return redirect()->route('admin.addverb')->with('success', 'Глагол добавлен!');
+
+        return redirect()->route('admin.addverb')->with('success', 'Verb added!');
     }
 
     public function addNoun()
@@ -55,6 +56,6 @@ class DictionaryController extends Controller
             'translate' => $request->translate,
         ]);
 
-        return redirect()->route('admin.addnoun')->with('success', 'Существительное добавлено!');
+        return redirect()->route('admin.addnoun')->with('success', 'Noun added!');
     }
 }

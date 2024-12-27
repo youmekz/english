@@ -1,5 +1,6 @@
 section#content {
   margin-left: var(--nav-width);
+  padding: 0 3vw;
 }
 
 nav.left-nav {

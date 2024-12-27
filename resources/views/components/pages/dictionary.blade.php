@@ -1,28 +1,41 @@
 <x-layouts.default>
   <x-layouts.leftnav>
-    <a href="#complexVerbs">Complex verbs</a>
-    <a href="#simpleVerbs">Simple verbs</a>
-    <a href="#nouns">Nouns</a>
+    <a href="#pronouns">{{ __('Pronouns') }}</a>
+    <a href="#questions">{{ __('Questions') }}</a>
+    <a href="#prepositions">{{ __('Prepositions') }}</a>
+    <a href="#complexVerbs">{{ __('Complex verbs') }}</a>
+    <a href="#simpleVerbs">{{ __('Simple verbs') }}</a>
+    <a href="#nouns">{{ __('Nouns') }}</a>
   </x-layouts.leftnav>
 
   <section id="content">
+
+    <x-dictionary.pronouns />
+    <hr>
+    <x-dictionary.questions />
+    <hr>
+    <x-dictionary.prepositions />
+    <hr>
+
     <div id="complexVerbs">
-      <h2>List complex verbs</h2>
+      <h2>{{ __('List complex verbs') }}</h2>
       <table>
           <thead>
               <tr>
-                  <th>in Russian</th>
-                  <th>Simple form</th>
-                  <th>Complex form</th>
+                  <th>{{ __('in Russian') }}</th>
+                  <th>{{ __('Simple form') }}</th>
+                  <th>{{ __('Complex form') }}</th>
               </tr>
           </thead>
           <tbody>
               @foreach ($verbs as $verb)
-                  <tr>
+                  @isset($verb->complex)
+                    <tr>
                       <td>{{ $verb->russian }}</td>
                       <td>{{ $verb->simple }}</td>
                       <td>{{ $verb->complex }}</td>
-                  </tr>
+                    </tr>
+                  @endisset
               @endforeach
           </tbody>
       </table>
@@ -31,13 +44,12 @@
     <hr>
 
     <div id="simpleVerbs">
-      <h2>List simple verbs</h2>
+      <h2>{{ __('List simple verbs') }}</h2>
       <table>
           <thead>
               <tr>
-                  <th>in Russian</th>
-                  <th>Simple form</th>
-                  <th>Complex form</th>
+                  <th>{{ __('in Russian') }}</th>
+                  <th>{{ __('Translate') }}</th>
               </tr>
           </thead>
           <tbody>
@@ -56,12 +68,12 @@
     <hr>
 
     <div id="nouns">
-      <h2>List nouns</h2>
+      <h2>{{ __('List nouns') }}</h2>
       <table>
           <thead>
               <tr>
-                <th>in Russian</th>
-                <th>Translate</th>
+                <th>{{ __('in Russian') }}</th>
+                <th>{{ __('Translate') }}</th>
               </tr>
           </thead>
           <tbody>
@@ -74,5 +86,8 @@
           </tbody>
       </table>
     </div>
+
+    <hr>
+
   </section>
 </x-layouts.default>
