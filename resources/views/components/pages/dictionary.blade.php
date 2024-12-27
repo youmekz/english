@@ -1,14 +1,13 @@
 <x-layouts.default>
   <x-layouts.leftnav>
-    <a href="/admin?key={{ config('app.admin_key') }}">Verbs</a>
-    <a href="/admin?key={{ config('app.admin_key') }}">Nouns</a>
+    <a href="#complexVerbs">Complex verbs</a>
+    <a href="#simpleVerbs">Simple verbs</a>
+    <a href="#nouns">Nouns</a>
   </x-layouts.leftnav>
 
   <section id="content">
-    <div id="verbs">
-
-      <h1>List verbs</h1>
-  
+    <div id="complexVerbs">
+      <h2>List complex verbs</h2>
       <table>
           <thead>
               <tr>
@@ -31,10 +30,33 @@
 
     <hr>
 
-    <div id="nouns">
+    <div id="simpleVerbs">
+      <h2>List simple verbs</h2>
+      <table>
+          <thead>
+              <tr>
+                  <th>in Russian</th>
+                  <th>Simple form</th>
+                  <th>Complex form</th>
+              </tr>
+          </thead>
+          <tbody>
+              @foreach ($verbs as $verb)
+                  @empty($verb->complex)
+                    <tr>
+                        <td>{{ $verb->russian }}</td>
+                        <td>{{ $verb->simple }}</td>
+                    </tr>
+                  @endempty
+              @endforeach
+          </tbody>
+      </table>
+    </div>
 
-      <h1>List nouns</h1>
-  
+    <hr>
+
+    <div id="nouns">
+      <h2>List nouns</h2>
       <table>
           <thead>
               <tr>

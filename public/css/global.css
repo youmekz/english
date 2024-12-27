@@ -5,6 +5,7 @@
 @import url(header.css);
 @import url(leftnav.css);
 @import url(alert.css);
+@import url(table.css);
 
 
 * {
@@ -46,4 +47,9 @@ button {
   border-radius: var(--radius);
   color: white;
   font-size: 1.2rem;
+}
+
+hr {
+  margin: 1rem;
+  border-color: var(--color-theme);
 }

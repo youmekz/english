@@ -1,0 +1,23 @@
+table {
+  min-width: 70vw;
+  border: 1px solid var(--color-theme);
+  border-radius: var(--radius);
+}
+
+table th {
+  background: var(--color-theme);
+  color: white;
+  border-radius: var(--radius);
+  font-size: 1.2rem;
+  padding: 3px 12px;
+}
+
+table tr:nth-child(even) {
+  background-color: lightgray;
+}
+
+table td {
+  padding: 2px 8px;
+  border-radius: var(--radius);
+  border: 1px solid lightgray;
+}
