@@ -10,3 +10,17 @@ h2 img {
 table table {
   width: 24vw;
 }
+
+h3 {
+  padding: 5px 15px;
+  border-radius: var(--radius);
+  background: var(--color-theme);
+  color: white;
+  margin: 1rem 10vw;
+  text-align: center;
+}
+
+h2:not(:has(img)) {
+  font-size: 2rem;
+  float: right
+}
