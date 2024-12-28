@@ -34,3 +34,10 @@
      </div>
    </section>
  </x-layouts.default>
+
+
+ <script>
+  window.onload = function() {
+      document.getElementById('simple').focus();
+  }
+</script>

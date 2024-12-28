@@ -30,3 +30,9 @@
       </div>
   </section>
 </x-layouts.default>
+
+<script>
+  window.onload = function() {
+      document.getElementById('translate').focus();
+  }
+</script>
