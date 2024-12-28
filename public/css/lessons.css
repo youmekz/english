@@ -24,3 +24,9 @@ h2:not(:has(img)) {
   font-size: 2rem;
   float: right
 }
+
+@media (max-width: 1200px) {
+  .image-table {
+    width: 80vw;
+  }
+}

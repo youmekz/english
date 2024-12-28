@@ -32,3 +32,57 @@ nav.left-nav a:hover {
   background: gray;
   color: white;
 }
+
+nav.left-nav .stub-mobile {
+  display: none;
+}
+nav.left-nav .button-mobile {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+section#content {
+  width: 90vw;
+  margin-left: 5vw;
+}
+nav.left-nav {
+  position: fixed;
+  top: var(--header-height);
+  left: -100vw;
+  width: 90vw;
+  height: 100vh;
+}
+nav.left-nav .stub-mobile {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -10vw;
+  background: rgba(0, 0, 0, 0.6);
+  width: 10vw;
+  height: 100vh;
+  backdrop-filter: blur(7px);
+}
+nav.left-nav .button-mobile {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: calc(-10vw - 30px);
+  top: 40vh;
+  width: 30px;
+  height: 10vh;
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  cursor: pointer;
+  background: var(--color-theme);
+}
+nav.left-nav .button-mobile > p {
+  height: 100%;
+  padding: 5px;
+  writing-mode: vertical-rl;
+  text-align: center;
+  color: white;
+}
+nav.left-nav a {
+  font-size: 2.5rem;
+}
+}
