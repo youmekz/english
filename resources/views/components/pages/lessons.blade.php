@@ -12,6 +12,8 @@
 
   <section id="content">
     <x-lessons.lesson_1 />
+    <x-lessons.lesson_2 />
+    <x-lessons.lesson_3 />
   </section>
 
 </x-layouts.default>
