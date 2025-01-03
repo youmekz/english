@@ -14,6 +14,7 @@
     <x-lessons.lesson_1 />
     <x-lessons.lesson_2 />
     <x-lessons.lesson_3 />
+    <x-lessons.lesson_4 />
   </section>
 
 </x-layouts.default>
