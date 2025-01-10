@@ -58,3 +58,8 @@ hr {
 h1, h2, h3, h4, h5 {
   padding: 5px 15px;
 }
+
+section#content {
+  margin-left: var(--nav-width);
+  padding: 0 3vw;
+}

@@ -13,8 +13,8 @@
   <menu>
     <a href="/">{{ __('Home') }}</a>
     <a href="/pages/lessons">{{ __('Lessons') }}</a>
-    <a href="/pages/tests">{{ __('Tests') }}</a>
     <a href="/pages/dictionary">{{ __('Dictionary') }}</a>
+    <a href="/pages/phrases">{{ __('Phrases') }}</a>
   </menu>
 </header>
 

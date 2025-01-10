@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\DictionaryVerb;
 use App\Models\DictionaryNoun;
+use App\Models\Phrases;
 use Illuminate\Http\Request;
 
 class DictionaryController extends Controller
@@ -14,6 +15,12 @@ class DictionaryController extends Controller
       $nouns = DictionaryNoun::all();
 
       return view('components.pages.dictionary', compact('verbs', 'nouns'));
+    }
+
+    public function showPhrases() {
+      $phrases = Phrases::all();
+
+      return view('components.pages.phrases', compact('phrases'));
     }
 
     public function addVerb()
@@ -65,5 +72,29 @@ class DictionaryController extends Controller
         ]);
 
         return redirect()->route('admin.addnoun')->with('success', 'Noun added!');
+    }
+
+    public function addPhrases()
+    {
+        return view('components.admin.addphrases');
+    }
+
+    public function storePhrases(Request $request)
+    {
+        if ($request['key'] !== config('app.admin_key')) {
+          exit();
+        }
+
+        $request->validate([
+            'russian' => 'required|string|max:255',
+            'translate' => 'required|string|max:255',
+        ]);
+
+        Phrases::create([
+            'russian' => $request->russian,
+            'translate' => $request->translate,
+        ]);
+
+        return redirect()->route('admin.addphrases')->with('success', 'Phrase added!');
     }
 }

@@ -17,9 +17,7 @@ Route::get('/pages/lessons', function () {
   return view('components.pages.lessons');
 });
 
-Route::get('/pages/tests', function () {
-  return view('components.pages.tests');
-});
+Route::get('/pages/phrases', [DictionaryController::class, 'showPhrases'])->name('components.pages.phrases');
 
 Route::get('/pages/dictionary', [DictionaryController::class, 'showDictionary'])->name('components.pages.dictionary');
 
@@ -34,3 +32,6 @@ Route::post('/admin/verbs', [DictionaryController::class, 'storeVerb']);
 
 Route::get('/admin/nouns', [DictionaryController::class, 'addNoun'])->name('admin.addnoun');
 Route::post('/admin/nouns', [DictionaryController::class, 'storeNoun']);
+
+Route::get('/admin/phrases', [DictionaryController::class, 'addPhrases'])->name('admin.addphrases');
+Route::post('/admin/phrases', [DictionaryController::class, 'storePhrases']);
