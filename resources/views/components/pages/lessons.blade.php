@@ -12,8 +12,11 @@
 
   <section id="content">
     <x-lessons.lesson_1 />
+    <hr>
     <x-lessons.lesson_2 />
+    <hr>
     <x-lessons.lesson_3 />
+    <hr>
     <x-lessons.lesson_4 />
   </section>
 

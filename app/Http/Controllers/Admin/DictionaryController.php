@@ -23,6 +23,10 @@ class DictionaryController extends Controller
 
     public function storeVerb(Request $request)
     {
+        if ($request['key'] !== config('app.admin_key')) {
+          exit();
+        }
+
         $request->validate([
             'russian' => 'required|string|max:255',
             'simple' => 'required|string|max:255',
@@ -46,6 +50,10 @@ class DictionaryController extends Controller
 
     public function storeNoun(Request $request)
     {
+        if ($request['key'] !== config('app.admin_key')) {
+          exit();
+        }
+
         $request->validate([
             'russian' => 'required|string|max:255',
             'translate' => 'required|string|max:255',

@@ -27,7 +27,9 @@
               <div class="form-group">
                   <input type="text" name="complex" id="complex" class="form-control" placeholder="Complex form">
               </div>
-      
+
+              <input type="text" name="key" style="display: none" value="{{ config('app.admin_key') }}">
+
               <button type="submit">{{ __('Append') }}</button>
           </form>
         </div>

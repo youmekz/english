@@ -23,6 +23,8 @@
                 <div class="form-group">
                   <input type="text" name="russian" id="russian" class="form-control" placeholder="in Russian" required>
                 </div>
+
+                <input type="text" name="key" style="display: none" value="{{ config('app.admin_key') }}">
   
                 <button type="submit">{{ __('Append') }}</button>
             </form>
